@@ -1,0 +1,63 @@
+<script lang="ts">
+    let { sectionId, expandedSection, onSelect }: {
+        sectionId: number;
+        expandedSection: number | null;
+        onSelect: (id: number) => void;
+    } = $props();
+
+    let isExpanded = $derived(expandedSection === sectionId);
+</script>
+
+<div class="section" class:expanded={isExpanded}>
+    <button class="title" onclick={() => onSelect(sectionId)}>
+        section {sectionId}
+    </button>
+    <div class="content">
+        <p>Content for section {sectionId}</p>
+    </div>
+</div>
+
+<style>
+    .section {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        min-width: 3rem;
+        overflow: hidden;
+        transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        border-right: 2px solid #e5e7eb;
+    }
+    .section:last-child {
+        border-right: none;
+    }
+    .section.expanded {
+        flex: 5;
+    }
+    .title {
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        padding: 1rem 0.75rem;
+        cursor: pointer;
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        transition: color 0.2s ease;
+    }
+    .content {
+        flex: 1;
+        padding: 1.5rem;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease 0.15s;
+        min-width: 0;
+    }
+    .section.expanded .content {
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
