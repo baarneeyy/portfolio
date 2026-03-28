@@ -9,16 +9,34 @@
 </script>
 
 <div class="section-carousel">
-    <Section sectionId={0} {expandedSection} onSelect={toggle} />
-    <Section sectionId={1} {expandedSection} onSelect={toggle} />
-    <Section sectionId={2} {expandedSection} onSelect={toggle} />
+    <Section 
+        sectionId={0} 
+        {expandedSection} 
+        onSelect={toggle} 
+        sectionName="Myself"
+        contentType="info"
+    />
+    <Section 
+        sectionId={1} 
+        {expandedSection} 
+        onSelect={toggle} 
+        sectionName="Experience & Education"
+        contentType="timeline"
+    />
+    <Section 
+        sectionId={2} 
+        {expandedSection} 
+        onSelect={toggle} 
+        sectionName="Projects"
+        contentType="projects"
+    />
 </div>
 
 <style>
     .section-carousel {
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
     }
 </style>
