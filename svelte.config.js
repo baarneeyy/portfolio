@@ -1,3 +1,4 @@
+import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,9 +10,10 @@ const config = {
 		adapter: adapter()
 	},
 	vitePlugin: {
-		dynamicCompileOptions: ({ filename }) =>
-			filename.includes('node_modules') ? undefined : { runes: true }
-	}
+		dynamicCompileOptions: ({ filename }) => filename.includes('node_modules') ? undefined : { runes: true }
+	},
+	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
+	extensions: ['.svelte', '.svx', '.md']
 };
 
 export default config;
