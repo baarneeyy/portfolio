@@ -1,9 +1,20 @@
-<script>
+<script lang="ts">
     import InfoCard from "$lib/components/infoCard.svelte";
-    import AboutText from "$lib/blog/aboutText.svx";
+    import IntroText from "$lib/blog/introText.svx";
+    import AboutText from "$lib/blog/aboutText.svx"
+
+    let showIntro: boolean = $state(true);
 </script>
-<div class="container">
-    <AboutText />
+<div class="container" onclick={() => {showIntro = !showIntro}}>
+    {#if showIntro}
+        <div class="markdown-content">
+            <IntroText />
+        </div>
+    {:else}
+        <div class="markdown-content">
+            <AboutText />
+        </div>
+    {/if}
 </div>
 
 <style>
