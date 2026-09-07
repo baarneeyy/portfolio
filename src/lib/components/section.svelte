@@ -1,5 +1,7 @@
 <script lang="ts">
     import AboutPage from "$lib/components/aboutPage.svelte";
+    import GraphCard from "$lib/components/graphCard.svelte";
+    import ProjectPage from "$lib/components/projectPage.svelte";
 
     let { sectionId, expandedSection, onSelect, sectionName, contentType }: {
         sectionId: number;
@@ -12,17 +14,18 @@
     let isExpanded = $derived(expandedSection === sectionId);
 </script>
 
-<div class="section" class:expanded={isExpanded}>
+<div class="section" class:expanded={isExpanded} onclick={() => { if (!isExpanded) onSelect(sectionId); }}>
     <button class="title" onclick={() => onSelect(sectionId)}>
         {sectionName}
     </button>
     <div class="content">
         {#if contentType == "projects"}
-            <p class="text-3xl">WIP</p>
+            <ProjectPage />
         {:else if contentType == "info"}
             <AboutPage />
         {:else}
-            <p class="text-3xl">ON THE WAY</p>
+            <p>Education</p>
+            <GraphCard />
         {/if}
     </div>
 </div>

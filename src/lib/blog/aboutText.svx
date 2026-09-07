@@ -1,2 +1,11 @@
-# Hello there
-My name's *Tom* and I develop stuff :]
+# about myself.
+Hi, my name's Tomi and since early high school, I've been interested in everything computer related.
+From entertainment reasons to actual interests in programming, I found my way around the web.
+After my first try at college, I started w  
+Hi, my name's Tomi and I'm a young developer-in-training. Most of my experience is with web development,
+but I try to dabble in everything. Currently studying for my Bachelor's in CyberSecurity at MUNI Brno
+
+## profile links.
+- [codeberg](https://codeberg.org/LeF0n0/)
+- [github](https://github.com/baarneeyy/)
+- [linkedIn](https://www.linkedin.com/in/tom%C3%A1%C5%A1-v%C5%A1ete%C4%8Dka-30541340b/)

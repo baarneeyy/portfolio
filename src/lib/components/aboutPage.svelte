@@ -3,18 +3,19 @@
     import IntroText from "$lib/blog/introText.svx";
     import AboutText from "$lib/blog/aboutText.svx"
 
+    import { fade } from "svelte/transition";
     let showIntro: boolean = $state(true);
 </script>
 <div class="container" onclick={() => {showIntro = !showIntro}}>
-    {#if showIntro}
-        <div class="markdown-content">
-            <IntroText />
+    {#key showIntro}
+        <div class="markdown-content prose" in:fade={{ duration:500 }}>
+            {#if showIntro}    
+                <IntroText />
+            {:else}
+                <AboutText />
+            {/if}
         </div>
-    {:else}
-        <div class="markdown-content">
-            <AboutText />
-        </div>
-    {/if}
+    {/key}
 </div>
 
 <style>
@@ -25,5 +26,6 @@
         font-size: x-large;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
 </style>
