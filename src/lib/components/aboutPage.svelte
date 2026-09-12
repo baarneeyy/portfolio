@@ -20,6 +20,7 @@
 
 <style>
     .container {
+        user-select: none;
         min-height: 100%;
         display: flex;
         flex-direction: column;

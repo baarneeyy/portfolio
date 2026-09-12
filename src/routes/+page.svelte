@@ -36,7 +36,8 @@
     .section-carousel {
         display: flex;
         flex-direction: row;
-        min-height: 100vh;
+        height: calc(100vh - 64px);
         width: 100%;
+        overflow: hidden;
     }
 </style>

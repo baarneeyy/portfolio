@@ -1,0 +1,18 @@
+# Linux-to-iOS syncing guide for the budget experts
+- [ ] finalize text
+- [ ] add guide how to setup new synced folder
+- [ ] more formatting inside the text itself
+- [ ] edit blog page ui
+- [ ] add links to syncthing/synctrain if necessary
+
+Eversince I started college, I was in need of a note-taking app and since I am a customization-freak, obsidian stood out as the most flexible option, allowing me to add plugins and truly 'personalize' my note-taking experience. And as a student I would prefer to have my notes available both on my phone and on my laptop.
+
+Two slight issues arise here. First thing that came to my mind was to check if Obsidian has its own built-in sync option and it has Obsidian Sync. However, since I'm a broke student and don't want to pay for anything if not necessary, I decided to check if there were some free alternatives.
+### Syncthing
+Open source, encrypted and decentralized. Syncthing allows users to sync folders between multiple devices. I used Syncthing previously to automatically upload pictures from my previous Pixel phone to my laptop. After I switched to an iPhone, I came to know that Apple restricts background use for apps much more strictly than Android. When I was researching ways to sync Obsidian, I found [lukm's guide on using syncthing](https://lukm.dev/writings/obsidian-cross-platform-sync/) specifically for Obsidian. This guide is inspired by this.
+#### Synctrain
+For iOS, Synctrain is a modern syncthing client which *most importantly* has options for creating shortcuts & automations via iOS's Shortcuts app.
+
+#### Shortcut & automation
+- [Sync Automation](https://www.icloud.com/shortcuts/1f954ef205124000a890e16f28711400) -> self-explainable; every time I open or exit Obsidian on my phone, the directory is scanned for changes and synced with my Laptop (if available)
+- [Pull shortcut](https://www.icloud.com/shortcuts/cf489148f9cd4df2ab54922099655ea8) -> Since constant background syncthing usage would not work (I think at least?) I use this shortcut to simply pull any changes I made on my laptop

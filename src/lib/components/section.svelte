@@ -63,7 +63,7 @@
     .content {
         flex: 1;
         padding: 1.5rem;
-        overflow: hidden;
+        overflow-y: auto;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.25s ease 0.15s;
