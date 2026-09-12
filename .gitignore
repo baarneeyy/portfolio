@@ -18,6 +18,16 @@ Thumbs.db
 !.env.example
 !.env.test
 
+# AI agent config (do not publish)
+AGENTS.md
+CLAUDE.md
+.claude/
+.opencode/
+.mcp.json
+
+# Editor
+.vscode/
+
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
