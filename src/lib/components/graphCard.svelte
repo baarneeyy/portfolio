@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { createGitgraph, Orientation, templateExtend, TemplateName } from "@gitgraph/js";
+    // import { createGitgraph, Orientation, templateExtend, TemplateName } from "@gitgraph/js";
     import { onMount } from "svelte";
 
-    let gitgraph: ReturnType<typeof createGitgraph> | null = null;
+    let gitgraph: any = null;
 
-    onMount(() => {
+    onMount(async () => {
+        const { createGitgraph, Orientation, templateExtend, TemplateName } = await import("@gitgraph/js");
         const graphContainer = document.getElementById("edu-graph") as HTMLElement;
 
         gitgraph = createGitgraph(graphContainer, {
